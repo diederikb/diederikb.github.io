@@ -23,7 +23,7 @@ repository               : "diederikb/diederikb.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.jpg"
+  avatar           : "diederikbeckers.jpg"
   name             : #"Your Sidebar Name"
   pronouns         : # example: "she/her"  
   bio              : "Postdoctoral scholar in the Department of Aerospace at Caltech"
