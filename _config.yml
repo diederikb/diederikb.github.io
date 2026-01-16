@@ -27,8 +27,8 @@ author:
   name             : #"Your Sidebar Name"
   pronouns         : # example: "she/her"  
   bio              : "Postdoctoral scholar in the Department of Aerospace at Caltech"
-  location         : "Los Angeles"
-  employer         : "California Institute of Technology"
+  location         : "Los Angeles, CA"
+  employer         : "Caltech"
   uri              : # URL
   email            : "" 
 
