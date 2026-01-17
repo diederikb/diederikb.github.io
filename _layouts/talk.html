@@ -30,12 +30,35 @@ layout: default
           {% if page.read_time %}
             <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
           {% endif %}
-        {% if page.modified %}
-          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i>Date:</strong> <time datetime="{{ page.modified | date: "%Y-%m-%d" }}">{{ page.modified | date: "%B %d, %Y" }}</time></p>
-        {% elsif page.date %}
-          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i>Date:</strong> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time></p>
-        {% endif %}
-        {% if page.talk_type %}<p>{{page.talk_type}} at {{ page.venue }},  {{page.location}} {% endif %}
+          <div class="page__meta-info">
+            {% if page.date or page.date_start %}
+            <div class="page__meta-row">
+              <strong class="page__meta-label"><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Date:</strong>
+              <span class="page__meta-value">{% include talk-date.html %}</span>
+            </div>
+            {% endif %}
+
+            {% if page.venue %}
+            <div class="page__meta-row">
+              <strong class="page__meta-label"><i class="fa fa-university" aria-hidden="true"></i> Venue:</strong>
+              <span class="page__meta-value">{{ page.venue }}</span>
+            </div>
+            {% endif %}
+
+            {% if page.location %}
+            <div class="page__meta-row">
+              <strong class="page__meta-label"><i class="fa fa-map-marker" aria-hidden="true"></i> Location:</strong>
+              <span class="page__meta-value">{{ page.location }}</span>
+            </div>
+            {% endif %}
+
+            {% if page.talk_type %}
+            <div class="page__meta-row">
+              <strong class="page__meta-label"><i class="fa fa-microphone" aria-hidden="true"></i> Type:</strong>
+              <span class="page__meta-value">{{ page.talk_type }}</span>
+            </div>
+            {% endif %}
+          </div>
 
         </header>
       {% endunless %}

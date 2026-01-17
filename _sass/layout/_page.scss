@@ -399,3 +399,29 @@
   font-size: $type-size-6;
   text-transform: uppercase;
 }
+
+/*
+   Talk page meta alignment
+   ========================================================================== */
+
+.page__meta-info {
+  display: flex;
+  flex-direction: column; // stack rows vertically
+  gap: 0.25em;            // spacing between rows
+}
+
+.page__meta-row {
+  display: flex;
+  align-items: center;    // vertically center icon + value
+}
+
+.page__meta-label {
+  width: 6.5em;           // fixed width so all labels align
+  font-weight: bold;
+  white-space: nowrap;     // prevent label wrapping
+}
+
+.page__meta-value {
+  flex: 1;                 // value takes remaining space
+}
+
