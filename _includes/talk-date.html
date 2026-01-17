@@ -1,0 +1,27 @@
+{% assign d_start = post.date_start | default: page.date_start %}
+{% assign d_end   = post.date_end   | default: page.date_end %}
+{% assign d_single = post.date     | default: page.date %}
+
+{% if d_start and d_end and d_start != d_end %}
+  {% assign start_year = d_start | date: "%Y" %}
+  {% assign end_year   = d_end   | date: "%Y" %}
+  {% assign start_month = d_start | date: "%b" %}
+  {% assign end_month   = d_end   | date: "%b" %}
+  {% assign start_day   = d_start | date: "%-d" %}
+  {% assign end_day     = d_end   | date: "%-d" %}
+
+  <time datetime="{{ d_start | date_to_xmlschema }}">{{ start_month }} {{ start_day }}</time>
+  &ndash;
+  {% if start_year != end_year %}
+    <time datetime="{{ d_end | date_to_xmlschema }}">{{ end_month }} {{ end_day }}, {{ end_year }}</time>
+  {% elsif start_month != end_month %}
+    <time datetime="{{ d_end | date_to_xmlschema }}">{{ end_month }} {{ end_day }}, {{ start_year }}</time>
+  {% else %}
+    <time datetime="{{ d_end | date_to_xmlschema }}">{{ end_day }}, {{ start_year }}</time>
+  {% endif %}
+
+{% elsif d_start %}
+  <time datetime="{{ d_start | date_to_xmlschema }}">{{ d_start | date: "%b %-d, %Y" }}</time>
+{% elsif d_single %}
+  <time datetime="{{ d_single | date_to_xmlschema }}">{{ d_single | date: "%b %-d, %Y" }}</time>
+{% endif %}
