@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I'm a postdoctoral scholar at Caltech researching multi-physics problems involving turbulent flows and developing numerical methods to simulate them.
+I'm a postdoctoral scholar at Caltech, specializing in multiphysics problems involving turbulent flows and the development of numerical simulation methods.
 
 <!-- A data-driven personal website -->
 <!-- ====== -->
