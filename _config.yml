@@ -233,6 +233,10 @@ collections:
   talks:
     output: true
     permalink: /:collection/:path/
+  # Research examples shown on the homepage. Set output: true if you ever want
+  # each example to also get its own standalone page.
+  research:
+    output: false
 
 
 # These settings control how pages and collections are included in the site

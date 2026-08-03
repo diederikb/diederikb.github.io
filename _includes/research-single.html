@@ -1,0 +1,54 @@
+{% include base_path %}
+
+{% comment %}
+  Renders a single research example (title + figure + text).
+
+  Expects a `post` variable holding an entry of the _research collection.
+  Front matter fields it understands:
+    title        - heading of the section (required)
+    order        - number used to sort the examples on the homepage
+    image        - file name inside /images/research/ (e.g. vortex.gif),
+                   a path starting with / , or a full external URL
+    alt          - alt text for the figure (accessibility, please fill in)
+    caption      - optional caption shown underneath the figure (markdown ok)
+    image_side   - left (default) or right: which side the figure sits on
+    image_wide   - true: figure spans the full width, text below it
+    link         - optional "read more" URL
+    link_label   - optional label for that link (default: "Read more")
+{% endcomment %}
+
+{% if post.image %}
+  {% assign research_image_first_char = post.image | slice: 0 %}
+  {% if post.image contains "://" %}
+    {% assign research_image = post.image %}
+  {% elsif research_image_first_char == "/" %}
+    {% capture research_image %}{{ post.image | prepend: base_path }}{% endcapture %}
+  {% else %}
+    {% capture research_image %}{{ post.image | prepend: "/images/research/" | prepend: base_path }}{% endcapture %}
+  {% endif %}
+{% endif %}
+
+<div class="research__item{% if post.image_wide %} research__item--wide{% elsif post.image_side == 'right' %} research__item--image-right{% endif %}">
+
+  {% if post.title %}
+    <h2 class="research__title" id="{{ post.title | slugify }}">{{ post.title }}</h2>
+  {% endif %}
+
+  <div class="research__body">
+    {% if research_image %}
+      <figure class="research__figure">
+        <img src="{{ research_image }}" alt="{{ post.alt | default: post.title }}" loading="lazy">
+        {% if post.caption %}
+          <figcaption>{{ post.caption | markdownify | remove: "<p>" | remove: "</p>" }}</figcaption>
+        {% endif %}
+      </figure>
+    {% endif %}
+
+    <div class="research__text">
+      {{ post.content | markdownify }}
+      {% if post.link %}
+        <p class="research__link"><a href="{% if post.link contains '://' %}{{ post.link }}{% else %}{{ post.link | prepend: base_path }}{% endif %}">{{ post.link_label | default: "Read more" }}</a></p>
+      {% endif %}
+    </div>
+  </div>
+</div>

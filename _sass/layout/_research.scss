@@ -1,0 +1,73 @@
+/* ==========================================================================
+   RESEARCH EXAMPLES
+   Sections on the homepage combining a title, a figure (image or gif) and text
+   ========================================================================== */
+
+.research__item {
+  margin-bottom: 2.5em;
+
+  &:last-child {
+    margin-bottom: 1em;
+  }
+}
+
+.research__title {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-size: $type-size-4;
+}
+
+.research__body {
+  @include clearfix;
+}
+
+.research__figure {
+  margin: 0 0 1em;
+  text-align: center;
+
+  img {
+    width: 100%;
+    border-radius: $border-radius;
+  }
+
+  figcaption {
+    margin-top: 0.5em;
+    font-size: $type-size-6;
+    text-align: left;
+  }
+}
+
+.research__text {
+  > p:first-child {
+    margin-top: 0;
+  }
+}
+
+.research__link {
+  font-weight: bold;
+}
+
+/* Figure next to the text on wider screens; stacked on narrow ones */
+@include breakpoint($medium) {
+  .research__item:not(.research__item--wide) {
+    .research__body {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5em;
+    }
+
+    .research__figure {
+      flex: 0 0 45%;
+      margin-bottom: 0;
+    }
+
+    .research__text {
+      flex: 1 1 auto;
+    }
+  }
+
+  /* Figure on the right instead of the left */
+  .research__item--image-right .research__body {
+    flex-direction: row-reverse;
+  }
+}
