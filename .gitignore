@@ -28,9 +28,6 @@ package-lock.json
 # Ignore the spreadsheets the markdown_generator TSVs are exported from
 *.numbers
 
-# Ignore the generated search dump
-search.txt
-
 # Ignore the source PDFs of research figures; only the converted
 # SVG/PNG/GIF that the site actually loads is committed
 images/research/*.pdf
