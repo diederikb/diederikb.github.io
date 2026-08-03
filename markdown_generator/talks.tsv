@@ -2,7 +2,7 @@ title	type	url_slug	venue	date	date_start	date_end	location	talk_url	description
 Fast potential flow computations for low-order aerodynamic modeling	Conference presentation	aps-72	72nd Annual Meeting of the APS Division of Fluid Dynamics		2019-11-23	2019-11-26	"Seattle, WA"		
 Fast Potential Flow Computations for Low-order Aerodynamic Modeling	Conference presentation	socal-14	14th Southern California Flow Physics Symposium	2020-04-10			Virtual		
 Fast Potential Flow Computations for Low-order Aerodynamic Modeling	Conference presentation	aps-73	73rd Annual Meeting of the APS Division of Fluid Dynamics		2020-11-22	2020-11-24	Virtual		
-Aggregated Lifting-line Vortex Modeling for Unsteady Aerodynamics	Conference presentation	aps-74	74th Annual Meeting of the APS Division of Fluid Dynamics		2020-11-26	2020-11-29	"Phoenix, AZ"		
+Aggregated Lifting-line Vortex Modeling for Unsteady Aerodynamics	Conference presentation	aps-74	74th Annual Meeting of the APS Division of Fluid Dynamics		2021-11-21	2021-11-23	"Phoenix, AZ"		
 Towards a computationally-augmented wind tunnel for unsteady aerodynamics	Conference presentation	socal-15	15th Southern California Flow Physics Symposium	2022-04-23			"Los Angeles, CA"		
 Discretization error analysis of convective schemes for large eddy simulations with adaptive mesh refinement	Conference presentation	nrel	Rocky Mountain Fluid Mechanics Research Symposium	2022-08-09			"Boulder, CO"		
 A computationally-augmented wind tunnel with irrotational gust generation for low-speed aerodynamics	Conference presentation	aps-75	75th Annual Meeting of the APS Division of Fluid Dynamics		2022-11-20	2022-11-22	"Indianapolis, IN"		
@@ -13,3 +13,4 @@ Immersed-boundary modeling of turbulent channel flow with deforming walls	Confer
 Improving the conditioning of the immersed boundary projection method	Conference presentation	aps-77	77th Annual Meeting of the APS Division of Fluid Dynamics		2024-11-24	2024-11-26	"Salt Lake City, UT"		
 Improving the conditioning and accuracy of the projection-based immersed boundary methods	Conference presentation	aps-78	78th Annual Meeting of the APS Division of Fluid Dynamics		2025-11-23	2025-11-25	"Houston, TX"		
 A High-Fidelity Simulation Framework for Turbulent Flows with Complex (Metamaterial) Structures	Conference presentation	scitech-26	AIAA SciTech 2026 Forum		2026-01-12	2026-01-16	"Orlando, FL"		
+High-fidelity simulations of basal melting with seawater intrusion in Antarctic grounding zones	Conference presentation	jpgu-agu-26	JpGU-AGU Joint Meeting 2026		2026-05-24	2026-05-29	"Chiba, Japan"		
