@@ -62,47 +62,56 @@ def html_escape(text):
 
 # In[5]:
 
-loc_dict = {}
+def field(item, name):
+    """Value of a TSV column as a stripped string, or None when it is empty."""
+    value = item.get(name)
+    if pd.isna(value):
+        return None
+    return str(value).strip() or None
 
 for row, item in talks.iterrows():
-    
-    md_filename = str(item.date) + "-" + item.url_slug + ".md"
-    html_filename = str(item.date) + "-" + item.url_slug 
-    year = item.date[:4]
-    
+
+    date_start = field(item, "date_start")
+    date_end = field(item, "date_end")
+    date_single = field(item, "date")
+
+    # Multi-day talks give a start and end date, single-day talks just a date.
+    # The filename and the permalink are both built from this one slug, so they
+    # can never drift apart.
+    slug = str(date_start or date_single) + "-" + item.url_slug
+
     md = "---\ntitle: \""   + item.title + '"\n'
     md += "collection: talks" + "\n"
-    
-    if len(str(item.type)) > 3:
-        md += 'type: "' + item.type + '"\n'
-    else:
-        md += 'type: "Talk"\n'
-    
-    md += "permalink: /talks/" + html_filename + "\n"
-    
-    if len(str(item.venue)) > 3:
-        md += 'venue: "' + item.venue + '"\n'
-        
-    if len(str(item.date)) > 3:
-        md += "date: " + str(item.date) + "\n"
-    
-    if len(str(item.location)) > 3:
-        md += 'location: "' + str(item.location) + '"\n'
-           
+    md += 'type: "' + (field(item, "type") or "Talk") + '"\n'
+    md += "permalink: /talk/" + slug + "\n"
+
+    if field(item, "venue"):
+        md += 'venue: "' + field(item, "venue") + '"\n'
+
+    if date_start:
+        md += "date_start: " + date_start + "\n"
+        if date_end:
+            md += "date_end: " + date_end + "\n"
+    elif date_single:
+        md += "date: " + date_single + "\n"
+
+    if field(item, "location"):
+        md += 'location: "' + field(item, "location") + '"\n'
+
     md += "---\n"
-    
-    
-    if len(str(item.talk_url)) > 3:
-        md += "\n[More information here](" + item.talk_url + ")\n" 
-        
-    
-    if len(str(item.description)) > 3:
-        md += "\n" + html_escape(item.description) + "\n"
-        
-        
-    md_filename = os.path.basename(md_filename)
+
+
+    if field(item, "talk_url"):
+        md += "\n[More information here](" + field(item, "talk_url") + ")\n"
+
+
+    if field(item, "description"):
+        md += "\n" + html_escape(field(item, "description")) + "\n"
+
+
+    md_filename = os.path.basename(slug + ".md")
     #print(md)
-    
+
     with open("../_talks/" + md_filename, 'w') as f:
         f.write(md)
 
