@@ -1,6 +1,6 @@
 ---
 title: "Flow control with reinforcement learning"
-order: 4
+order: 5
 image: viscous_triple_aimed_strong_point_force_combined.gif
 alt: "Airfoil pitching in response to incoming gusts under a learned control policy"
 caption: "Static airfoil and controlled airfoil pitching in response to incoming gusts under a learned control policy"

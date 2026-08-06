@@ -1,6 +1,6 @@
 ---
 title: "Model-based reinforcement learning for flow control"
-order: 5
+order: 6
 image: model_based_RL.png
 alt: "Architecture of the physics-augmented autoencoder: a convolutional encoder and multi-layer perceptron compress flow snapshots into latent variables, a decoder reconstructs the fields, and a separate network maps the latent variables to physical variables"
 caption: "The physics-augmented autoencoder: a convolutional encoder compresses CFD flow snapshots into a three-dimensional latent space, a decoder reconstructs the fields, and a separate network maps the latent variables to physical variables."

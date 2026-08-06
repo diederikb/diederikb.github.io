@@ -1,6 +1,6 @@
 ---
 title: "Basal melting and seawater intrusion in Antarctic grounding zones"
-order: 6
+order: 7
 image: JpGU-AGU_2026.svg
 alt: "Schematic of the subglacial channel setup at an Antarctic grounding zone, next to an instantaneous temperature field of the turbulent case showing a shear layer at the channel mouth and a short seawater intrusion"
 caption: "Turbulent case at a meltwater inflow of $$U_f = 10$$ cm/s: the instantaneous temperature field on a streamwise slice shows the developing turbulent shear layer and the warm, salty seawater (red) intruding only a short distance into the channel."

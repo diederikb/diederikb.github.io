@@ -1,6 +1,6 @@
 ---
 title: "Accurate and well-conditioned immersed boundary methods"
-order: 8
+order: 9
 image: 2D_double_cylinder_combined.svg
 alt: "Flow between two concentric interfaces, with velocity profiles and surface force distributions compared between the original IBPM, the new formulation, and the exact solution"
 caption: "Flow between two concentric interfaces: the original immersed boundary projection method (red) produces strongly oscillatory surface forces on $$\\Gamma_1$$, while the new formulation (blue) follows the exact solution (dashed)."
