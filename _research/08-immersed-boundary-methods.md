@@ -9,7 +9,4 @@ link: /publication/2026-01-01-improved-accuracy-of-the-discrete-immersed-boundar
 link_label: "Read the paper"
 ---
 
-Immersed boundary methods let us simulate flows around complex, moving geometries
-on simple Cartesian grids, but the classical continuous-forcing formulations are limited to first-order accuracy. I develop discretizations that go beyond first-order
-accuracy at the interface, together with well-conditioned projection-based solvers
-that keep the resulting systems cheap to solve.
+Immersed boundary methods let us simulate flows around complex, moving geometries on simple Cartesian grids, but classical continuous-forcing formulations are limited to first-order accuracy. I developed discretizations that achieve higher-order accuracy at the interface while improving the conditioning of the method within a projection-based framework, making the resulting systems cheaper to solve.
